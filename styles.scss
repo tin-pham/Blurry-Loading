@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  @include flexCenter();
+}
+
+.background {
+  background: url(../bg.jpg) no-repeat center center/cover;
+  position: absolute;
+  // To make the background not comeout so much when blur
+  left: -30px;
+  top: -30px;
+  height: calc(100vh + 30px);
+  width: calc(100vw + 30px);
+  z-index: -1;
+  // Blue
+  filter: blur(0px);
+
+  @include flexCenter();
+}
+.counter {
+  font-size: 5rem;
+  color: white;
+}
